@@ -1,8 +1,6 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include <SoftwareSerial.h>
 
-SoftwareSerial tiltSerial(2, 3); // RX=2, TX=3
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 int redPin = 9;
@@ -39,9 +37,6 @@ void setup() {
   pinMode(ldrPin, INPUT);
 
   Serial.begin(9600);
-  tiltSerial.begin(9600);
-  
-  tiltSerial.setTimeout(150);
 }
 
 void loop() {
